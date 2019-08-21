@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Events Blah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="mainpage.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light text-light justify-content-between">
+        <div class="row align-items-center">
+            <img src="img/DeloitteFaviconWhite.png" style="height: 40px; width: 40px;" class="ml-3">
+            <h4 class="ml-3 text-dark">Events Blah Application</h4>
+        </div>
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="chartProductID" placeholder="Enter Product ID">
+            </div>
+            <button class="btn my-2 my-sm-0 ml-2" type="button" style="background-color: #86BC25;"
+                onclick="">Search</button>
+        </form>
+    </nav>
+
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="row mt-4 pt-4 justify-content-center">
+                <form class="col-8">
+                    <div class="form-group">
+                        <label for="feedDetail" class="mr-2">Enter Feed:</label>
+                        <textarea class="form-control" id="feedDetail" rows="3"
+                            placeholder="Enter Feed Text Here"></textarea>
+                    </div>
+                    <div class="row justify-content-center" style="width: 100%;">
+                        <button type="button" class="btn btn-success ml-2" onclick="myCreateEvent()" style="width: 50%;">
+                            Post
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="row mt-4 pt-4 justify-content-center mx-4">
+                <h3> The Content of the Feed is displayed Below</h3>
+                <form class="form-inline">
+                    <button type="button" class="btn btn-primary ml-2" onclick="getFeed()">
+                        Click Here to Get Data
+                    </button>
+                </form>
+            </div>
+            <div class="row mt-3 justify-content-center" id="feedInfo">
+                <h5>Here will be new content</h5>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
