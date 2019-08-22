@@ -20,7 +20,7 @@
         </div>
         <form class="form-inline">
             <div class="form-group">
-                <input type="text" class="form-control" id="chartProductID" placeholder="Enter Product ID">
+                <input type="text" class="form-control" placeholder="Enter Nothing Here">
             </div>
             <button class="btn my-2 my-sm-0 ml-2" type="button" style="background-color: #86BC25;"
                 onclick="">Search</button>
@@ -32,12 +32,17 @@
             <div class="row mt-4 pt-4 justify-content-center">
                 <form class="col-8">
                     <div class="form-group">
+                        <label for="userDetail" class="mr-2">Enter User:</label>
+                        <input class="form-control" type="text" id="userDetail" placeholder="Enter User ID">
+                    </div>
+                    <div class="form-group">
                         <label for="feedDetail" class="mr-2">Enter Feed:</label>
                         <textarea class="form-control" id="feedDetail" rows="3"
                             placeholder="Enter Feed Text Here"></textarea>
                     </div>
                     <div class="row justify-content-center" style="width: 100%;">
-                        <button type="button" class="btn btn-success ml-2" onclick="myCreateEvent()" style="width: 50%;">
+                        <button type="button" class="btn btn-success ml-2" onclick="myCreateEvent()"
+                            style="width: 50%;">
                             Post
                         </button>
                     </div>
@@ -48,13 +53,18 @@
         <div class="col-12">
             <div class="row mt-4 pt-4 justify-content-center mx-4">
                 <h3> The Content of the Feed is displayed Below</h3>
+            </div>
+            <div class="row mt-3 justify-content-center" id="feedInfo">
                 <form class="form-inline">
-                    <button type="button" class="btn btn-primary ml-2" onclick="getFeed()">
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="userGetID" placeholder="Enter User ID">
+                    </div>
+                    <button type="button" class="btn btn-primary ml-2" onclick="getEvent()">
                         Click Here to Get Data
                     </button>
                 </form>
             </div>
-            <div class="row mt-3 justify-content-center" id="feedInfo">
+            <div class="row mt-3 justify-content-center" id="feedDisplay">
                 <h5>Here will be new content</h5>
             </div>
         </div>

@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 import json
 import os 
 
@@ -15,8 +15,28 @@ def eventsProcess():
         os.remove(filename)
         with open(filename, 'w') as json_file:
             json.dump(data, json_file)
+
+        print(data)
         return jsonify(data)
     if request.method == 'GET':
-        print("Nothing")
+        user = request.args.get('user')
+        filename = 'data.json'
+        with open(filename, 'r+') as json_file:
+            data = json.load(json_file)
+        for item in data['feeds']:
+            if item['user'] == user:
+                iteminfo = json.dumps(item)
+                resp = Response(iteminfo, status=200, mimetype='application/json')
+                return jsonify(item)
+        errorJson = {}
+        errorJson["Error"] = "UserNotFound"
+        return jsonify(errorJson)
         
 app.run(host="0.0.0.0", port=8999)
+
+
+{"jOHN":"tHIS IS jOHN"}
+
+mydata["john"]
+
+this is john
